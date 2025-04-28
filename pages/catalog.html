@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="Play Star, детский развлекательный центр, игровые центры Альметьевск, детский центр, игровые зоны Альметьевск, детский игровой городок, комната для проведения мероприятий с выходом на игровую площадку, игровые автоматы, зона Play Station, арена виртуальной реальности Another World, услуги аниматора для организации праздников, шоу мыльных пузырей">
+    <link rel="stylesheet" href="../style.css" />
+    <title>Play Star - Детский развлекательный центр</title>
+  </head>
+  <body>
+    <!-- Шапка -->
+    <header class="header">
+      <div class="container">
+        <a href="../index.html" class="logo">
+          <img src="../img/logo.jpg" alt="Play Star" />
+          <span>Play Star</span>
+        </a>
+        <div class="desktop-nav">
+          <nav class="nav">
+            <a href="../index.html">ГЛАВНАЯ</a>
+            <a href="./catalog.html">НАШИ РАЗВЛЕЧЕНИЯ</a>
+            <a href="./contact.html">КОНТАКТЫ</a>
+          </nav>
+          <div class="header-social">
+            <a href="whatsapp://send?phone=79534995505&text=">
+              <img src="/img/wats.png" alt="WhatsApp" />
+            </a>
+            <a href="https://vk.me/id420363008">
+              <img src="/img/vk.png" alt="VK" />
+            </a>
+          </div>
+        </div>
+        <div class="burger-menu">
+          <div class="burger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+      <div class="mobile-menu">
+        <nav class="mobile-nav">
+          <a href="../index.html">ГЛАВНАЯ</a>
+          <a href="./catalog.html">НАШИ РАЗВЛЕЧЕНИЯ</a>
+          <a href="./contact.html">КОНТАКТЫ</a>
+        </nav>
+        <div class="mobile-social">
+          <img src="/img/wats.png" alt="WhatsApp" />
+          <img src="/img/vk.png" alt="VK" />
+        </div>
+      </div>
+    </header>
+
+    <main class="catalog container">
+      <h1>Давайте играть вместе!</h1>
+      <div class="carts">
+        <div class="cart" id="1">
+          <h2>Детский игровой городок</h2>
+          <p>Лабиринты, горки, батуты для детей 3-12 лет</p>
+        </div>
+        <div class="cart" id="2">
+          <h2>Комната для мероприятий</h2>
+          <p>Праздники с выходом на игровую площадку</p>
+        </div>
+        <div class="cart" id="3">
+          <h2>Игровые автоматы</h2>
+          <p>Классические аркадные игры</p>
+        </div>
+        <div class="cart" id="4">
+          <h2>Зона Play Station</h2>
+          <p>Игры на приставках для детей и подростков</p>
+        </div>
+        <div class="cart" id="5">
+          <h2>VR-арена «Another World»</h2>
+          <p>Виртуальная реальность для гостей от 10 лет</p>
+        </div>
+        <div class="cart" id="6">
+          <h2>Услуги аниматора</h2>
+          <p>Организация дней рождения и праздников</p>
+        </div>
+        <div class="cart" id="7">
+          <h2>Шоу мыльных пузырей</h2>
+          <p>Волшебное представление для малышей</p>
+        </div>
+      </div>
+    </main>
+
+    <!-- Подвал -->
+    <footer class="footer">
+      <div class="container">
+        <a href="../index.html" class="footer-logo">
+          <img src="/img/logo.jpg" alt="Play Star" />
+          <span>Play Star</span>
+        </a>
+        <div class="footer-info">
+          <span>Режим работы: 10:00 - 22:00</span>
+          <span>ул. Ленина, 100, ТРЦ «Панорама», 3-й этаж</span>
+          <span>+7 (953) 499-55-05</span>
+        </div>
+        <div class="footer-social">
+          <a href="whatsapp://send?phone=79534995505&text=">
+            <img src="/img/wats.png" alt="WhatsApp" />
+          </a>
+          <a href="https://vk.me/id420363008">
+            <img src="/img/vk.png" alt="VK" />
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const header = document.querySelector(".header");
+        const burgerMenu = document.querySelector(".burger-menu");
+
+        burgerMenu.addEventListener("click", function (e) {
+          e.stopPropagation();
+          header.classList.toggle("menu-open");
+
+          if (header.classList.contains("menu-open")) {
+            document.body.style.overflow = "hidden";
+          } else {
+            document.body.style.overflow = "";
+          }
+        });
+
+        const mobileLinks = document.querySelectorAll(".mobile-nav a");
+        mobileLinks.forEach((link) => {
+          link.addEventListener("click", function () {
+            header.classList.remove("menu-open");
+            document.body.style.overflow = "";
+          });
+        });
+
+        document.addEventListener("click", function () {
+          if (header.classList.contains("menu-open")) {
+            header.classList.remove("menu-open");
+            document.body.style.overflow = "";
+          }
+        });
+
+        document
+          .querySelector(".mobile-menu")
+          .addEventListener("click", function (e) {
+            e.stopPropagation();
+          });
+      });
+    </script>
+  </body>
+</html>
